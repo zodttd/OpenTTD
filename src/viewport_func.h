@@ -1,0 +1,77 @@
+/* $Id: viewport_func.h 18602 2009-12-22 12:50:41Z rubidium $ */
+
+/*
+ * This file is part of OpenTTD.
+ * OpenTTD is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * OpenTTD is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with OpenTTD. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/** @file viewport_func.h Functions related to (drawing on) viewports. */
+
+#ifndef VIEWPORT_FUNC_H
+#define VIEWPORT_FUNC_H
+
+#include "gfx_type.h"
+#include "viewport_type.h"
+#include "vehicle_type.h"
+#include "window_type.h"
+#include "tile_type.h"
+
+void SetSelectionRed(bool);
+
+void DeleteWindowViewport(Window *w);
+void InitializeWindowViewport(Window *w, int x, int y, int width, int height, uint32 follow_flags, ZoomLevel zoom);
+ViewPort *IsPtInWindowViewport(const Window *w, int x, int y);
+Point GetTileBelowCursor();
+void UpdateViewportPosition(Window *w);
+
+/**
+ * Mark all viewports dirty for repaint.
+ *
+ * @ingroup dirty
+ */
+void MarkAllViewportsDirty(int left, int top, int right, int bottom);
+
+bool DoZoomInOutWindow(int how, Window *w);
+void ZoomInOrOutToCursorWindow(bool in, Window * w);
+Point GetTileZoomCenterWindow(bool in, Window * w);
+void HandleZoomMessage(Window *w, const ViewPort *vp, byte widget_zoom_in, byte widget_zoom_out);
+
+static inline void MaxZoomInOut(int how, Window *w)
+{
+	while (DoZoomInOutWindow(how, w)) {};
+}
+
+void OffsetGroundSprite(int x, int y);
+
+void DrawGroundSprite(SpriteID image, SpriteID pal, const SubSprite *sub = NULL, int extra_offs_x = 0, int extra_offs_y = 0);
+void DrawGroundSpriteAt(SpriteID image, SpriteID pal, int32 x, int32 y, byte z, const SubSprite *sub = NULL, int extra_offs_x = 0, int extra_offs_y = 0);
+void AddSortableSpriteToDraw(SpriteID image, SpriteID pal, int x, int y, int w, int h, int dz, int z, bool transparent = false, int bb_offset_x = 0, int bb_offset_y = 0, int bb_offset_z = 0, const SubSprite *sub = NULL);
+void AddChildSpriteScreen(SpriteID image, SpriteID pal, int x, int y, bool transparent = false, const SubSprite *sub = NULL);
+void ViewportAddString(const DrawPixelInfo *dpi, ZoomLevel small_from, const ViewportSign *sign, StringID string_normal, StringID string_small, StringID string_small_shadow, uint64 params_1, uint64 params_2 = 0, Colours colour = INVALID_COLOUR);
+
+
+void StartSpriteCombine();
+void EndSpriteCombine();
+
+bool HandleViewportClicked(const ViewPort *vp, int x, int y);
+void PlaceObject();
+void SetRedErrorSquare(TileIndex tile);
+void SetTileSelectSize(int w, int h);
+void SetTileSelectBigSize(int ox, int oy, int sx, int sy);
+
+Vehicle *CheckMouseOverVehicle();
+
+void ViewportDoDraw(const ViewPort *vp, int left, int top, int right, int bottom);
+
+bool ScrollWindowTo(int x, int y, int z, Window *w, bool instant = false);
+
+bool ScrollMainWindowToTile(TileIndex tile, bool instant = false);
+bool ScrollMainWindowTo(int x, int y, int z = -1, bool instant = false);
+
+void UpdateAllVirtCoords();
+
+extern Point _tile_fract_coords;
+
+#endif /* VIEWPORT_FUNC_H */

@@ -1,0 +1,48 @@
+/* $Id: ai_subsidy.hpp.sq 17697 2009-10-04 18:16:44Z rubidium $ */
+
+/*
+ * This file is part of OpenTTD.
+ * OpenTTD is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * OpenTTD is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with OpenTTD. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* THIS FILE IS AUTO-GENERATED; PLEASE DO NOT ALTER MANUALLY */
+
+#include "ai_subsidy.hpp"
+
+namespace SQConvert {
+	/* Allow enums to be used as Squirrel parameters */
+	template <> AISubsidy::SubsidyParticipantType GetParam(ForceType<AISubsidy::SubsidyParticipantType>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQInteger tmp; sq_getinteger(vm, index, &tmp); return (AISubsidy::SubsidyParticipantType)tmp; }
+	template <> int Return<AISubsidy::SubsidyParticipantType>(HSQUIRRELVM vm, AISubsidy::SubsidyParticipantType res) { sq_pushinteger(vm, (int32)res); return 1; }
+
+	/* Allow AISubsidy to be used as Squirrel parameter */
+	template <> AISubsidy *GetParam(ForceType<AISubsidy *>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return  (AISubsidy *)instance; }
+	template <> AISubsidy &GetParam(ForceType<AISubsidy &>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return *(AISubsidy *)instance; }
+	template <> const AISubsidy *GetParam(ForceType<const AISubsidy *>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return  (AISubsidy *)instance; }
+	template <> const AISubsidy &GetParam(ForceType<const AISubsidy &>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return *(AISubsidy *)instance; }
+	template <> int Return<AISubsidy *>(HSQUIRRELVM vm, AISubsidy *res) { if (res == NULL) { sq_pushnull(vm); return 1; } res->AddRef(); Squirrel::CreateClassInstanceVM(vm, "AISubsidy", res, NULL, DefSQDestructorCallback<AISubsidy>); return 1; }
+}; // namespace SQConvert
+
+void SQAISubsidy_Register(Squirrel *engine)
+{
+	DefSQClass <AISubsidy> SQAISubsidy("AISubsidy");
+	SQAISubsidy.PreRegister(engine);
+	SQAISubsidy.AddConstructor<void (AISubsidy::*)(), 1>(engine, "x");
+
+	SQAISubsidy.DefSQConst(engine, AISubsidy::SPT_INDUSTRY, "SPT_INDUSTRY");
+	SQAISubsidy.DefSQConst(engine, AISubsidy::SPT_TOWN,     "SPT_TOWN");
+	SQAISubsidy.DefSQConst(engine, AISubsidy::SPT_INVALID,  "SPT_INVALID");
+
+	SQAISubsidy.DefSQStaticMethod(engine, &AISubsidy::IsValidSubsidy,      "IsValidSubsidy",      2, ".i");
+	SQAISubsidy.DefSQStaticMethod(engine, &AISubsidy::IsAwarded,           "IsAwarded",           2, ".i");
+	SQAISubsidy.DefSQStaticMethod(engine, &AISubsidy::GetAwardedTo,        "GetAwardedTo",        2, ".i");
+	SQAISubsidy.DefSQStaticMethod(engine, &AISubsidy::GetExpireDate,       "GetExpireDate",       2, ".i");
+	SQAISubsidy.DefSQStaticMethod(engine, &AISubsidy::GetCargoType,        "GetCargoType",        2, ".i");
+	SQAISubsidy.DefSQStaticMethod(engine, &AISubsidy::GetSourceType,       "GetSourceType",       2, ".i");
+	SQAISubsidy.DefSQStaticMethod(engine, &AISubsidy::GetSourceIndex,      "GetSourceIndex",      2, ".i");
+	SQAISubsidy.DefSQStaticMethod(engine, &AISubsidy::GetDestinationType,  "GetDestinationType",  2, ".i");
+	SQAISubsidy.DefSQStaticMethod(engine, &AISubsidy::GetDestinationIndex, "GetDestinationIndex", 2, ".i");
+
+	SQAISubsidy.PostRegister(engine);
+}
