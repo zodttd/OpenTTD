@@ -1,0 +1,19 @@
+#!/bin/sh
+
+TARGET=
+
+if [ "$1" == "--cflags" ]
+then
+	echo "-I/Users/me/dev/openttd/openttd-1.0.0-beta2-source/projects/openttd/include"
+elif [ "$1" == "--prefix" ]
+then
+	echo "/Users/me/dev/openttd/openttd-1.0.0-beta2-source/projects/openttd"
+elif [ "$1" == "--cppflags" ]
+then
+	echo ""
+elif [ "$1" == "--version" ]
+then
+	echo "fake"
+else
+	echo "-L/Users/me/dev/openttd/openttd-1.0.0-beta2-source/projects/openttd/lib -lpng"
+fi

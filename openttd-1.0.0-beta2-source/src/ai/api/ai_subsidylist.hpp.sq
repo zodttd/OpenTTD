@@ -1,0 +1,30 @@
+/* $Id: ai_subsidylist.hpp.sq 17697 2009-10-04 18:16:44Z rubidium $ */
+
+/*
+ * This file is part of OpenTTD.
+ * OpenTTD is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * OpenTTD is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with OpenTTD. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* THIS FILE IS AUTO-GENERATED; PLEASE DO NOT ALTER MANUALLY */
+
+#include "ai_subsidylist.hpp"
+
+namespace SQConvert {
+	/* Allow AISubsidyList to be used as Squirrel parameter */
+	template <> AISubsidyList *GetParam(ForceType<AISubsidyList *>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return  (AISubsidyList *)instance; }
+	template <> AISubsidyList &GetParam(ForceType<AISubsidyList &>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return *(AISubsidyList *)instance; }
+	template <> const AISubsidyList *GetParam(ForceType<const AISubsidyList *>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return  (AISubsidyList *)instance; }
+	template <> const AISubsidyList &GetParam(ForceType<const AISubsidyList &>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return *(AISubsidyList *)instance; }
+	template <> int Return<AISubsidyList *>(HSQUIRRELVM vm, AISubsidyList *res) { if (res == NULL) { sq_pushnull(vm); return 1; } res->AddRef(); Squirrel::CreateClassInstanceVM(vm, "AISubsidyList", res, NULL, DefSQDestructorCallback<AISubsidyList>); return 1; }
+}; // namespace SQConvert
+
+void SQAISubsidyList_Register(Squirrel *engine)
+{
+	DefSQClass <AISubsidyList> SQAISubsidyList("AISubsidyList");
+	SQAISubsidyList.PreRegister(engine, "AIAbstractList");
+	SQAISubsidyList.AddConstructor<void (AISubsidyList::*)(), 1>(engine, "x");
+
+	SQAISubsidyList.PostRegister(engine);
+}

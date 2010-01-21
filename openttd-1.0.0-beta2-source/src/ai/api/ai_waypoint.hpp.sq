@@ -1,0 +1,53 @@
+/* $Id: ai_waypoint.hpp.sq 18725 2010-01-04 19:42:29Z frosch $ */
+
+/*
+ * This file is part of OpenTTD.
+ * OpenTTD is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * OpenTTD is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with OpenTTD. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* THIS FILE IS AUTO-GENERATED; PLEASE DO NOT ALTER MANUALLY */
+
+#include "ai_waypoint.hpp"
+
+namespace SQConvert {
+	/* Allow enums to be used as Squirrel parameters */
+	template <> AIWaypoint::WaypointType GetParam(ForceType<AIWaypoint::WaypointType>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQInteger tmp; sq_getinteger(vm, index, &tmp); return (AIWaypoint::WaypointType)tmp; }
+	template <> int Return<AIWaypoint::WaypointType>(HSQUIRRELVM vm, AIWaypoint::WaypointType res) { sq_pushinteger(vm, (int32)res); return 1; }
+	template <> AIWaypoint::ErrorMessages GetParam(ForceType<AIWaypoint::ErrorMessages>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQInteger tmp; sq_getinteger(vm, index, &tmp); return (AIWaypoint::ErrorMessages)tmp; }
+	template <> int Return<AIWaypoint::ErrorMessages>(HSQUIRRELVM vm, AIWaypoint::ErrorMessages res) { sq_pushinteger(vm, (int32)res); return 1; }
+
+	/* Allow AIWaypoint to be used as Squirrel parameter */
+	template <> AIWaypoint *GetParam(ForceType<AIWaypoint *>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return  (AIWaypoint *)instance; }
+	template <> AIWaypoint &GetParam(ForceType<AIWaypoint &>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return *(AIWaypoint *)instance; }
+	template <> const AIWaypoint *GetParam(ForceType<const AIWaypoint *>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return  (AIWaypoint *)instance; }
+	template <> const AIWaypoint &GetParam(ForceType<const AIWaypoint &>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return *(AIWaypoint *)instance; }
+	template <> int Return<AIWaypoint *>(HSQUIRRELVM vm, AIWaypoint *res) { if (res == NULL) { sq_pushnull(vm); return 1; } res->AddRef(); Squirrel::CreateClassInstanceVM(vm, "AIWaypoint", res, NULL, DefSQDestructorCallback<AIWaypoint>); return 1; }
+}; // namespace SQConvert
+
+void SQAIWaypoint_Register(Squirrel *engine)
+{
+	DefSQClass <AIWaypoint> SQAIWaypoint("AIWaypoint");
+	SQAIWaypoint.PreRegister(engine, "AIBaseStation");
+	SQAIWaypoint.AddConstructor<void (AIWaypoint::*)(), 1>(engine, "x");
+
+	SQAIWaypoint.DefSQConst(engine, AIWaypoint::WAYPOINT_RAIL,                              "WAYPOINT_RAIL");
+	SQAIWaypoint.DefSQConst(engine, AIWaypoint::WAYPOINT_BUOY,                              "WAYPOINT_BUOY");
+	SQAIWaypoint.DefSQConst(engine, AIWaypoint::WAYPOINT_ANY,                               "WAYPOINT_ANY");
+	SQAIWaypoint.DefSQConst(engine, AIWaypoint::ERR_WAYPOINT_BASE,                          "ERR_WAYPOINT_BASE");
+	SQAIWaypoint.DefSQConst(engine, AIWaypoint::ERR_WAYPOINT_TOO_CLOSE_TO_ANOTHER_WAYPOINT, "ERR_WAYPOINT_TOO_CLOSE_TO_ANOTHER_WAYPOINT");
+	SQAIWaypoint.DefSQConst(engine, AIWaypoint::ERR_WAYPOINT_ADJOINS_MULTIPLE_WAYPOINTS,    "ERR_WAYPOINT_ADJOINS_MULTIPLE_WAYPOINTS");
+
+	AIError::RegisterErrorMap(STR_ERROR_TOO_CLOSE_TO_ANOTHER_WAYPOINT,           AIWaypoint::ERR_WAYPOINT_TOO_CLOSE_TO_ANOTHER_WAYPOINT);
+	AIError::RegisterErrorMap(STR_ERROR_WAYPOINT_ADJOINS_MORE_THAN_ONE_EXISTING, AIWaypoint::ERR_WAYPOINT_ADJOINS_MULTIPLE_WAYPOINTS);
+
+	AIError::RegisterErrorMapString(AIWaypoint::ERR_WAYPOINT_TOO_CLOSE_TO_ANOTHER_WAYPOINT, "ERR_WAYPOINT_TOO_CLOSE_TO_ANOTHER_WAYPOINT");
+	AIError::RegisterErrorMapString(AIWaypoint::ERR_WAYPOINT_ADJOINS_MULTIPLE_WAYPOINTS,    "ERR_WAYPOINT_ADJOINS_MULTIPLE_WAYPOINTS");
+
+	SQAIWaypoint.DefSQStaticMethod(engine, &AIWaypoint::IsValidWaypoint, "IsValidWaypoint", 2, ".i");
+	SQAIWaypoint.DefSQStaticMethod(engine, &AIWaypoint::GetWaypointID,   "GetWaypointID",   2, ".i");
+	SQAIWaypoint.DefSQStaticMethod(engine, &AIWaypoint::HasWaypointType, "HasWaypointType", 3, ".ii");
+
+	SQAIWaypoint.PostRegister(engine);
+}

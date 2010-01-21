@@ -1,0 +1,106 @@
+
+Detecing awk...
+Trying: echo "a.c b.c c.c" | tr ' ' \n |  awk ' { ORS = " " } /\.c$/   { gsub(".c$",   ".o", $0); print $0; }' 2>/dev/null
+Result: 'a.o b.o c.o '
+checking awk... awk
+forcing OS... UNIX
+executing /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin9-gcc-4.0.1 -dumpmachine
+  returned arm-apple-darwin9
+  exit code 0
+checking build system type... arm-apple-darwin9
+executing arm-apple-darwin9-gcc -dumpmachine
+  returned arm-apple-darwin9
+  exit code 0
+checking host system type... arm-apple-darwin9
+checking universal build... no
+checking build cc... /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin9-gcc-4.0.1
+checking host cc... arm-apple-darwin9-gcc
+executing /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin9-g++-4.0.1 -dumpmachine
+  returned arm-apple-darwin9
+  exit code 0
+checking build c++... /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin9-g++-4.0.1
+executing arm-apple-darwin9-g++ -dumpmachine
+  returned arm-apple-darwin9
+  exit code 0
+checking host c++... arm-apple-darwin9-g++
+checking strip... disabled
+checking builtin depend... yes
+checking makedepend... disabled
+executing arm-apple-darwin9-g++ -march=armv6 -fno-common -fno-builtin -miphoneos-version-min=2.2.1 -fomit-frame-pointer -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/include -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/lib/gcc/arm-apple-darwin9/4.0.1/include -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk -O3  tmp.64bit.cpp -o tmp.64bit -DTESTING 2>&1
+  returned tmp.64bit.cpp:3: error: size of array ‘__ct_assert__’ is negative
+  exit code 1
+detecting cpu-type... 32 bits
+checking static... no
+checking unicode... no
+using debug level... no
+using desync debug level... no
+using link time optimization... no
+checking OSX sysroot... not OSX, skipping
+executing allegro-config --version
+  returned 
+  exit code 127
+checking Allegro... not found
+executing /Users/me/dev/openttd/openttd-1.0.0-beta2-source/projects/openttd/lib/sdl-config --version
+  returned 1.3.0
+  exit code 0
+checking SDL... found
+checking COCOA... not OSX, skipping
+checking GDI video driver... not Windows, skipping
+checking dedicated... not selected
+checking network... found
+checking translator... no
+checking assert... disabled
+checking 3rdparty... found
+detecting zlib
+  trying /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/lib/libz.dylib... found
+checking zlib... found
+executing /Users/me/dev/openttd/openttd-1.0.0-beta2-source/projects/openttd/lib/libpng-config --version
+  returned fake
+  exit code 0
+checking libpng... found
+executing freetype_config --version
+  returned 9.20.3
+  exit code 0
+checking libfreetype... found
+executing pkg-config fontconfig --modversion
+  returned 
+  exit code 1
+checking libfontconfig... not found
+executing icu-config --version
+  returned 
+  exit code 127
+checking libicu... not found
+checking psp-config... not PSP, skipping
+detecting libtimidity
+  trying /usr/include/timidity.h... no
+  trying /usr/local/include/timidity.h... no
+checking libtimidity... not found
+checking direct-music... not Windows, skipping
+running echo <array> | sort
+  result was valid
+checking sort... sort
+checking endianess... LE
+suppress language errors... no
+checking stripping... skipped
+checking distcc... no (only used when forced)
+checking ccache... no (only used when forced)
+checking OSX application bundle... not OSX, skipping
+checking revision... release (1.0.0-beta2)
+checking iconv... not OSX, skipping
+personal home directory... .openttd
+shared data directory... none
+installation directory... /
+icon theme directory... share/icons/hicolor
+manual page directory... share/man/man6
+menu item directory... share/applications
+Running configure with following options:
+
+./configure --ignore-extra-parameters --build="" --host="arm-apple-darwin9" --cc-build="/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin9-gcc-4.0.1" --cc-host="arm-apple-darwin9-gcc" --cxx-build="/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin9-g++-4.0.1" --cxx-host="arm-apple-darwin9-g++" --windres="" --strip="" --lipo="" --awk="awk" --os="UNIX" --endian="LE" --cpu-type="32" --revision="1.0.0-beta2" --config-log="config.log" --prefix-dir="./" --binary-dir="games" --data-dir="share/games/openttd" --doc-dir="share/doc/openttd" --icon-dir="share/pixmaps" --icon-theme-dir="share/icons/hicolor" --man-dir="share/man/man6" --menu-dir="share/applications" --personal-dir=".openttd" --shared-dir="" --install-dir="/" --menu-group="Game;" --menu-name="OpenTTD" --binary-name="openttd" --enable-debug="0" --enable-desync-debug="0" --enable-profiling="0" --enable-lto="0" --enable-dedicated="0" --enable-network="1" --enable-static="0" --enable-translator="0" --enable-unicode="0" --enable-assert="0" --enable-strip="0" --enable-universal="0" --enable-osx-g5="0" --enable-cocoa-quartz="1" --enable-cocoa-quickdraw="1" --with-osx-sysroot="0" --with-application-bundle="0" --with-allegro="1" --with-sdl="/Users/me/dev/openttd/openttd-1.0.0-beta2-source/projects/openttd/lib/sdl-config" --with-cocoa="0" --with-zlib="/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/lib/libz.dylib" --with-png="/Users/me/dev/openttd/openttd-1.0.0-beta2-source/projects/openttd/lib/libpng-config" --enable-builtin-depend="1" --with-makedepend="0" --with-direct-music="0" --with-sort="1" --with-iconv="0" --with-midi="" --with-midi-arg="" --with-libtimidity="0" --with-freetype="/Users/me/dev/openttd/openttd-1.0.0-beta2-source/projects/openttd/lib/freetype-config" --with-fontconfig="1" --with-icu="1" --static-icu="0" --with-psp-config="1" --with-threads="1" --with-distcc="0" --with-ccache="0" --CC="/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin9-gcc-4.0.1" --CXX="/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin9-g++-4.0.1" --CFLAGS="-march=armv6 -fno-common -fno-builtin -miphoneos-version-min=2.2.1 -fomit-frame-pointer -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/include -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/lib/gcc/arm-apple-darwin9/4.0.1/include -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk -O3 " --CXXFLAGS="-march=armv6 -fno-common -fno-builtin -miphoneos-version-min=2.2.1 -fomit-frame-pointer -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/include -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/lib/gcc/arm-apple-darwin9/4.0.1/include -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk -O3 " --LDFLAGS="-F/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/System/Library/Frameworks -fomit-frame-pointer -march=armv6 -fno-common -fno-builtin -miphoneos-version-min=2.2.1 -fomit-frame-pointer -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/include -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/lib/gcc/arm-apple-darwin9/4.0.1/include -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk -O3 -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/lib -lobjc -lpthread -framework CoreFoundation -framework Foundation -framework UIKit -framework QuartzCore -framework CoreGraphics -framework CoreLocation -framework AudioToolbox -framework OpenGLES "
+
+using CFLAGS... -O2 -fomit-frame-pointer -march=armv6 -fno-common -fno-builtin -miphoneos-version-min=2.2.1 -fomit-frame-pointer -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/include -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/lib/gcc/arm-apple-darwin9/4.0.1/include -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk -O3  -Wall -Wno-multichar -Wsign-compare -Wundef -Wwrite-strings -Wpointer-arith -W -Wno-unused-parameter -Wformat=2 -Wredundant-decls -Wno-unused-variable -fno-strict-aliasing -Wcast-qual -DUNIX -DWITH_SDL -I/Users/me/dev/openttd/openttd-1.0.0-beta2-source/projects/openttd/include -DWITH_ZLIB -I/Users/me/dev/openttd/openttd-1.0.0-beta2-source/src/3rdparty/squirrel/include -DWITH_PNG   -DWITH_FREETYPE -I/Users/me/dev/openttd/openttd-1.0.0-beta2-source/projects/openttd/include/freetype2 -I/Users/me/dev/openttd/openttd-1.0.0-beta2-source/projects/openttd/include  -DENABLE_NETWORK -DNDEBUG -DWITH_PERSONAL_DIR -DPERSONAL_DIR=\".openttd\" -DGLOBAL_DATA_DIR=\".//share/games/openttd\"
+using CXXFLAGS... -march=armv6 -fno-common -fno-builtin -miphoneos-version-min=2.2.1 -fomit-frame-pointer -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/include -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/lib/gcc/arm-apple-darwin9/4.0.1/include -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk -O3 
+using LDFLAGS... -lstdc++ -lpthread -lc /Users/me/dev/openttd/openttd-1.0.0-beta2-source/projects/openttd/lib/libSDLiPhoneOS.a -lz -L/Users/me/dev/openttd/openttd-1.0.0-beta2-source/projects/openttd/lib -lpng  -L/Users/me/dev/openttd/openttd-1.0.0-beta2-source/projects/openttd/lib -lfreetype -lz  -O2 -fomit-frame-pointer -F/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/System/Library/Frameworks -fomit-frame-pointer -march=armv6 -fno-common -fno-builtin -miphoneos-version-min=2.2.1 -fomit-frame-pointer -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/include -I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/lib/gcc/arm-apple-darwin9/4.0.1/include -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk -O3 -L/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.2.1.sdk/usr/lib -lobjc -lpthread -framework CoreFoundation -framework Foundation -framework UIKit -framework QuartzCore -framework CoreGraphics -framework CoreLocation -framework AudioToolbox -framework OpenGLES  -fno-strict-aliasing
+Generating Makefile...
+Generating menu item...
+Generating lang/Makefile...
+Generating objs/Makefile...

@@ -1,0 +1,45 @@
+/* $Id: ai_industrytype.hpp.sq 17697 2009-10-04 18:16:44Z rubidium $ */
+
+/*
+ * This file is part of OpenTTD.
+ * OpenTTD is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * OpenTTD is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with OpenTTD. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* THIS FILE IS AUTO-GENERATED; PLEASE DO NOT ALTER MANUALLY */
+
+#include "ai_industrytype.hpp"
+
+namespace SQConvert {
+	/* Allow AIIndustryType to be used as Squirrel parameter */
+	template <> AIIndustryType *GetParam(ForceType<AIIndustryType *>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return  (AIIndustryType *)instance; }
+	template <> AIIndustryType &GetParam(ForceType<AIIndustryType &>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return *(AIIndustryType *)instance; }
+	template <> const AIIndustryType *GetParam(ForceType<const AIIndustryType *>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return  (AIIndustryType *)instance; }
+	template <> const AIIndustryType &GetParam(ForceType<const AIIndustryType &>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return *(AIIndustryType *)instance; }
+	template <> int Return<AIIndustryType *>(HSQUIRRELVM vm, AIIndustryType *res) { if (res == NULL) { sq_pushnull(vm); return 1; } res->AddRef(); Squirrel::CreateClassInstanceVM(vm, "AIIndustryType", res, NULL, DefSQDestructorCallback<AIIndustryType>); return 1; }
+}; // namespace SQConvert
+
+void SQAIIndustryType_Register(Squirrel *engine)
+{
+	DefSQClass <AIIndustryType> SQAIIndustryType("AIIndustryType");
+	SQAIIndustryType.PreRegister(engine);
+	SQAIIndustryType.AddConstructor<void (AIIndustryType::*)(), 1>(engine, "x");
+
+	SQAIIndustryType.DefSQStaticMethod(engine, &AIIndustryType::IsValidIndustryType,   "IsValidIndustryType",   2, ".i");
+	SQAIIndustryType.DefSQStaticMethod(engine, &AIIndustryType::GetName,               "GetName",               2, ".i");
+	SQAIIndustryType.DefSQStaticMethod(engine, &AIIndustryType::GetProducedCargo,      "GetProducedCargo",      2, ".i");
+	SQAIIndustryType.DefSQStaticMethod(engine, &AIIndustryType::GetAcceptedCargo,      "GetAcceptedCargo",      2, ".i");
+	SQAIIndustryType.DefSQStaticMethod(engine, &AIIndustryType::IsRawIndustry,         "IsRawIndustry",         2, ".i");
+	SQAIIndustryType.DefSQStaticMethod(engine, &AIIndustryType::ProductionCanIncrease, "ProductionCanIncrease", 2, ".i");
+	SQAIIndustryType.DefSQStaticMethod(engine, &AIIndustryType::GetConstructionCost,   "GetConstructionCost",   2, ".i");
+	SQAIIndustryType.DefSQStaticMethod(engine, &AIIndustryType::CanBuildIndustry,      "CanBuildIndustry",      2, ".i");
+	SQAIIndustryType.DefSQStaticMethod(engine, &AIIndustryType::CanProspectIndustry,   "CanProspectIndustry",   2, ".i");
+	SQAIIndustryType.DefSQStaticMethod(engine, &AIIndustryType::BuildIndustry,         "BuildIndustry",         3, ".ii");
+	SQAIIndustryType.DefSQStaticMethod(engine, &AIIndustryType::ProspectIndustry,      "ProspectIndustry",      2, ".i");
+	SQAIIndustryType.DefSQStaticMethod(engine, &AIIndustryType::IsBuiltOnWater,        "IsBuiltOnWater",        2, ".i");
+	SQAIIndustryType.DefSQStaticMethod(engine, &AIIndustryType::HasHeliport,           "HasHeliport",           2, ".i");
+	SQAIIndustryType.DefSQStaticMethod(engine, &AIIndustryType::HasDock,               "HasDock",               2, ".i");
+
+	SQAIIndustryType.PostRegister(engine);
+}

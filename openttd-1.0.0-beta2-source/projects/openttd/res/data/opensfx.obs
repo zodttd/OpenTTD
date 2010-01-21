@@ -1,0 +1,14 @@
+[metadata]
+name        = OpenSFX
+shortname   = OSFX
+version     = 66
+description = OpenSFX sound replacement set for OpenTTD. Freely available under the terms of the Creative Commons Sampling Plus 1.0 License. Contains samples from freesound.org and pdsound.org. For full credits see readme.txt [OpenSFX 0.2.1]
+
+[files]
+samples     = opensfx.cat
+
+[md5s]
+opensfx.cat = 4cf824bbc633cba109ee37c542913490
+
+[origin]
+default = Please redownload from BaNaNaS.

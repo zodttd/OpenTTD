@@ -1,0 +1,12 @@
+//
+// Prefix header for all source files of the 'openttd' target in the 'openttd' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
+
+#define APPSTORE 1
+
+#import "helpers.h"

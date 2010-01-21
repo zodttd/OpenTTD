@@ -1,0 +1,44 @@
+/* $Id: ai_basestation.hpp.sq 17697 2009-10-04 18:16:44Z rubidium $ */
+
+/*
+ * This file is part of OpenTTD.
+ * OpenTTD is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 2.
+ * OpenTTD is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with OpenTTD. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* THIS FILE IS AUTO-GENERATED; PLEASE DO NOT ALTER MANUALLY */
+
+#include "ai_basestation.hpp"
+
+namespace SQConvert {
+	/* Allow enums to be used as Squirrel parameters */
+	template <> AIBaseStation::SpecialStationIDs GetParam(ForceType<AIBaseStation::SpecialStationIDs>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQInteger tmp; sq_getinteger(vm, index, &tmp); return (AIBaseStation::SpecialStationIDs)tmp; }
+	template <> int Return<AIBaseStation::SpecialStationIDs>(HSQUIRRELVM vm, AIBaseStation::SpecialStationIDs res) { sq_pushinteger(vm, (int32)res); return 1; }
+
+	/* Allow AIBaseStation to be used as Squirrel parameter */
+	template <> AIBaseStation *GetParam(ForceType<AIBaseStation *>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return  (AIBaseStation *)instance; }
+	template <> AIBaseStation &GetParam(ForceType<AIBaseStation &>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return *(AIBaseStation *)instance; }
+	template <> const AIBaseStation *GetParam(ForceType<const AIBaseStation *>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return  (AIBaseStation *)instance; }
+	template <> const AIBaseStation &GetParam(ForceType<const AIBaseStation &>, HSQUIRRELVM vm, int index, SQAutoFreePointers *ptr) { SQUserPointer instance; sq_getinstanceup(vm, index, &instance, 0); return *(AIBaseStation *)instance; }
+	template <> int Return<AIBaseStation *>(HSQUIRRELVM vm, AIBaseStation *res) { if (res == NULL) { sq_pushnull(vm); return 1; } res->AddRef(); Squirrel::CreateClassInstanceVM(vm, "AIBaseStation", res, NULL, DefSQDestructorCallback<AIBaseStation>); return 1; }
+}; // namespace SQConvert
+
+void SQAIBaseStation_Register(Squirrel *engine)
+{
+	DefSQClass <AIBaseStation> SQAIBaseStation("AIBaseStation");
+	SQAIBaseStation.PreRegister(engine);
+	SQAIBaseStation.AddConstructor<void (AIBaseStation::*)(), 1>(engine, "x");
+
+	SQAIBaseStation.DefSQConst(engine, AIBaseStation::STATION_NEW,           "STATION_NEW");
+	SQAIBaseStation.DefSQConst(engine, AIBaseStation::STATION_JOIN_ADJACENT, "STATION_JOIN_ADJACENT");
+	SQAIBaseStation.DefSQConst(engine, AIBaseStation::STATION_INVALID,       "STATION_INVALID");
+
+	SQAIBaseStation.DefSQStaticMethod(engine, &AIBaseStation::IsValidBaseStation,  "IsValidBaseStation",  2, ".i");
+	SQAIBaseStation.DefSQStaticMethod(engine, &AIBaseStation::GetName,             "GetName",             2, ".i");
+	SQAIBaseStation.DefSQStaticMethod(engine, &AIBaseStation::SetName,             "SetName",             3, ".i.");
+	SQAIBaseStation.DefSQStaticMethod(engine, &AIBaseStation::GetLocation,         "GetLocation",         2, ".i");
+	SQAIBaseStation.DefSQStaticMethod(engine, &AIBaseStation::GetConstructionDate, "GetConstructionDate", 2, ".i");
+
+	SQAIBaseStation.PostRegister(engine);
+}

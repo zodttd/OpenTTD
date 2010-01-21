@@ -1,0 +1,9 @@
+In file included from /Users/me/dev/openttd/SDL8bit/Xcode-iPhoneOS/SDL/../../src/video/uikit/SDL_uikitopenglview.h:27,
+                 from /Users/me/dev/openttd/SDL8bit/Xcode-iPhoneOS/SDL/../../src/video/uikit/SDL_uikitopenglview.m:25:
+/Users/me/dev/openttd/SDL8bit/Xcode-iPhoneOS/SDL/../../src/video/uikit/SDL_uikitview.h:24:24: error: SDL_stdinc.h: No such file or directory
+/Users/me/dev/openttd/SDL8bit/Xcode-iPhoneOS/SDL/../../src/video/uikit/SDL_uikitview.h:25:23: error: SDL_mouse.h: No such file or directory
+/Users/me/dev/openttd/SDL8bit/Xcode-iPhoneOS/SDL/../../src/video/uikit/SDL_uikitview.h:26:25: error: SDL_mouse_c.h: No such file or directory
+/Users/me/dev/openttd/SDL8bit/Xcode-iPhoneOS/SDL/../../src/video/uikit/SDL_uikitview.h:27:24: error: SDL_events.h: No such file or directory
+In file included from /Users/me/dev/openttd/SDL8bit/Xcode-iPhoneOS/SDL/../../src/video/uikit/SDL_uikitopenglview.h:27,
+                 from /Users/me/dev/openttd/SDL8bit/Xcode-iPhoneOS/SDL/../../src/video/uikit/SDL_uikitopenglview.m:25:
+/Users/me/dev/openttd/SDL8bit/Xcode-iPhoneOS/SDL/../../src/video/uikit/SDL_uikitview.h:42: error: expected specifier-qualifier-list before 'SDL_Mouse'
