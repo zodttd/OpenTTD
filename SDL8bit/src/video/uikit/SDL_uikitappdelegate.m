@@ -73,8 +73,6 @@ int main(int argc, char **argv) {
 }
 
 - (void)postFinishLaunch {
-  [altAd stopAdTimers];
-  
 	/* run the user's application, passing argc and argv */
 	int exit_status = SDL_main(forward_argc, forward_argv);
 	
@@ -96,9 +94,8 @@ int main(int argc, char **argv) {
 	
   [SDLUIKitDelegate sharedAppDelegate].window = SDLUIKitApp.window;
   
-  altAd = [[AltAds alloc] initWithFrame:CGRectMake(0.0f, 480.0f-50.0f, 320.0f, 50.0f) andWindow:nil];
-  [SDLUIKitApp.window addSubview:altAd];
-  [SDLUIKitApp.window bringSubviewToFront:altAd];
+  [SDLUIKitApp.window addSubview:splashviewcontroller.view];
+  [SDLUIKitApp.window bringSubviewToFront:splashviewcontroller.view];
   [SDLUIKitApp.window makeKeyAndVisible];
   
 	//[self performSelector:@selector(postFinishLaunch) withObject:nil afterDelay:0.0];
@@ -127,7 +124,6 @@ int main(int argc, char **argv) {
 
 
 -(void)dealloc {
-  [altAd release];
 	//[window release];
 	[super dealloc];
 }

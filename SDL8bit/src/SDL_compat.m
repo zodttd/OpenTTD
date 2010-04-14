@@ -33,8 +33,8 @@
 #include "SDL_uikitview.h"
 
 extern int VideoAddressCount;
-extern unsigned long VideoAddress[20][480*320];
-extern unsigned long VideoBaseAddress[480*320];
+extern unsigned long VideoAddress[20][1024*768];
+extern unsigned long VideoBaseAddress[1024*768];
 extern SDL_uikitview* sharedSDL_uikitview;
 
 static SDL_WindowID SDL_VideoWindow = 0;
@@ -871,7 +871,7 @@ SDL_UpdateRects(SDL_Surface * screen, int numrects, SDL_Rect * rects)
   
   [sharedSDL_uikitview performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:NO];
 #else
- fsadfads 
+
     int i;
 
     if (screen == SDL_ShadowSurface) {

@@ -31,8 +31,8 @@
 #include "SDL_uikitview.h"
 
 extern int VideoAddressCount;
-extern unsigned long VideoAddress[20][480*320];
-extern unsigned long VideoBaseAddress[480*320];
+extern unsigned long VideoAddress[20][1024*768];
+extern unsigned long VideoBaseAddress[1024*768];
 extern SDL_uikitview* sharedSDL_uikitview;
 
 /* SDL surface based renderer implementation */

@@ -39,6 +39,7 @@ struct SDL_WindowData
     SDL_WindowID windowID;
     UIWindow *uiwindow;
     SDL_uikitview *view;
+    SDL_uikitviewcontroller *viewcontroller;
 };
 
 

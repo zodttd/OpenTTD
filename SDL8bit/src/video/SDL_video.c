@@ -1262,10 +1262,10 @@ SDL_GetWindowSize(SDL_WindowID windowID, int *w, int *h)
 
     if (window) {
         if (w) {
-            *w = window->h; // Reversed
+            *w = window->w;
         }
         if (h) {
-            *h = window->w; // Reversed
+            *h = window->h;
         }
     } else {
         if (w) {

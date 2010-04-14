@@ -18,31 +18,21 @@ static int didInit = 0;
 //*******************************************************************************************
 // initWithFrame: This initializes the AltAds view.
 //*******************************************************************************************
-- (id) initWithFrame:(CGRect)frame andWindow:(UIWindow*)_window
-{  
-	if (self = [super initWithFrame:frame]) 
-	{
-		UIView* SpacerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320.0f, 50.0f)];
-		SpacerView.backgroundColor = [UIColor clearColor];
-		[self addSubview:SpacerView];
-		[SpacerView release];
-		
-		// Put in a request to the server at the www.zodttd.com for which ad to show.
-		NSURL* Url = [NSURL URLWithString:WHICH_ADS_URL];
-		NSURLRequest* UrlRequest = [NSURLRequest requestWithURL:Url];
-		NSURLConnection* Connection = [[NSURLConnection alloc] initWithRequest:UrlRequest delegate:self];
-
+//- (id) initWithFrame:(CGRect)frame 
+- (void) awakeFromNib
+{
+	//if (self = [super initWithFrame:frame]) 
+	{    
+    // Put in a request to the server at the www.zodttd.com for which ad to show.
+    NSURL* Url = [NSURL URLWithString:WHICH_ADS_URL];
+    NSURLRequest* UrlRequest = [NSURLRequest requestWithURL:Url];
+    NSURLConnection* Connection = [[NSURLConnection alloc] initWithRequest:UrlRequest delegate:self];
+    
     if(0 == didInit)
     {
       didInit = 1;
     }
-		if(_window != nil)
-		{
-			[_window addSubview:self];
-		}
-	}
-	
-    return self;
+  }
 }
 
 //*******************************************************************************************
@@ -50,9 +40,9 @@ static int didInit = 0;
 //*******************************************************************************************
 - (void) dealloc 
 {
-    [super dealloc];
 	if(AdView != nil) [AdView release];
 	if(adMobAd != nil) [adMobAd release];
+  [super dealloc];
 }
 
 //*******************************************************************************************
@@ -176,7 +166,10 @@ static int didInit = 0;
 - (void) startMyOwnAds
 {
 	NSLog(@"Starting myOwn\n");
-	AdView = [[UIWebView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 50.0f)];
+	AdView = [[UIWebView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.frame.size.width, self.frame.size.height)];
+  [AdView setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
+	AdView.frame = CGRectMake(0.0, 0.0, self.frame.size.width, self.frame.size.height);
+	AdView.bounds = CGRectMake(0.0, 0.0, self.frame.size.width, self.frame.size.height);
 	AdSet = ADS_MINE;
 	[AdView setDelegate:self];
 	[self RefreshAd];
@@ -335,7 +328,9 @@ static int didInit = 0;
 - (void)didReceiveAd:(AdMobView *)adView 
 {
 	NSLog(@"AdMob: Did receive ad");
-	adView.frame = CGRectMake(0.0f, 5.0f, 320.0f, 48.0f); // put the ad at the bottom of the screen
+  [adView setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
+	adView.frame = CGRectMake(0.0, 0.0, self.frame.size.width, self.frame.size.height);
+	adView.bounds = CGRectMake(0.0, 0.0, self.frame.size.width, self.frame.size.height);
 	[self addSubview:adView];
 	NSLog(@"Adding av\n");
 	//adMobAd = adView;
@@ -381,6 +376,12 @@ static int didInit = 0;
 	CurrentAd++;
 	if(CurrentAd >= ADS_TOTAL)
 	{
+    static int didLoop = 0;
+    if(didLoop)
+    {
+      return;
+    }
+    didLoop++;
 		CurrentAd = ADS_TOTAL - 1;
 	}
 	

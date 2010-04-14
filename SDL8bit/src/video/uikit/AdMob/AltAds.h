@@ -31,7 +31,7 @@
 	BOOL				loadAdInFrame;
   int         refreshRate;
 }
-- (id)   initWithFrame:(CGRect)frame andWindow:(UIWindow*)_window;
+- (id)   initWithFrame:(CGRect)frame;
 - (void) AdTimerExpired:(NSTimer *)timer;
 - (void) webViewDidFinishLoad:(UIWebView*) webView;
 - (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;

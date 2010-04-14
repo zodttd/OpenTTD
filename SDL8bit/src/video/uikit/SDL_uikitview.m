@@ -21,6 +21,7 @@
  */
 
 #import "SDL_uikitview.h"
+#import "SDL_windowevents_c.h"
 
 #if SDL_IPHONE_KEYBOARD
 #import "SDL_keyboard_c.h"
@@ -32,16 +33,75 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/CALayer.h>
 
-extern int  _left_press = 0, 
-            _right_press = 0, 
-            _up_press = 0, 
-            _down_press = 0,
-            _num_press;
-
 int VideoAddressCount = 0;
-unsigned long VideoAddress[20][480*320];
-unsigned long VideoBaseAddress[480*320];
+unsigned long VideoAddress[20][1024*768];
+unsigned long VideoBaseAddress[1024*768];
+unsigned int current_width = 0;
+unsigned int current_height = 0;
+
 SDL_uikitview* sharedSDL_uikitview = nil;
+SDL_uikitviewcontroller* sharedSDL_uikitviewcontroller = nil;
+
+
+@implementation SDL_uikitviewcontroller
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+  
+  [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+  
+  sharedSDL_uikitviewcontroller = self;
+  
+  return self;
+}
+
+- (void)loadView
+{
+  SDL_uikitview *uikitview = [[SDL_uikitview alloc] initWithFrame:[UIScreen mainScreen].bounds];
+  [uikitview setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
+  self.view = uikitview;
+  [uikitview release];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+  if(UIInterfaceOrientationIsPortrait(interfaceOrientation))
+  {
+    current_width = [UIScreen mainScreen].bounds.size.width;
+    current_height = [UIScreen mainScreen].bounds.size.height;
+  }
+  else 
+  {
+    current_width = [UIScreen mainScreen].bounds.size.height;
+    current_height = [UIScreen mainScreen].bounds.size.width;
+  }
+  
+  // Doublecheck orientation since this function gets called twice during init and will overwrite manual checks
+  if(sharedSDL_uikitview != nil)
+  {
+    static int checkedOrientation = 0;
+    if(checkedOrientation < 2)
+    {
+      checkedOrientation++;
+      if(checkedOrientation == 2)
+      {
+        [sharedSDL_uikitview checkOrientation];
+        // Finally a chance to stop orientation notifications
+        [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+      }
+    }
+  }
+  
+  return YES;
+}
+
+- (void)dealloc
+{
+	[super dealloc];
+}
+
+@end
 
 @implementation SDL_uikitview
 
@@ -63,8 +123,27 @@ SDL_uikitview* sharedSDL_uikitview = nil;
 { 
   const int buffercount = VideoAddressCount;
 	const unsigned char* videobuffer = (unsigned char*)VideoAddress[buffercount == 0 ? 19 : buffercount - 1];
-  const int w = 480;
-  const int h = 320;
+  
+  SDL_Window *window = SDL_GetWindowFromID([SDLUIKitDelegate sharedAppDelegate].windowID);
+	
+	if (NULL != window) 
+  {
+    if (!(window->flags & SDL_WINDOW_FULLSCREEN) && !(current_width == window->w && current_height == window->h)) 
+    {
+      window->w = current_width;
+      window->h = current_height;
+      SDL_OnWindowResized(window);
+      VideoAddressCount = 0;
+      memset(VideoAddress, 0, 20*1024*768*4);
+    }
+  }
+  else 
+  {
+    return;
+  }
+
+  const int w = current_width;
+  const int h = current_height;
   const int bufferlength = w*h;
   
   
@@ -82,10 +161,10 @@ SDL_uikitview* sharedSDL_uikitview = nil;
                                          kCGRenderingIntentDefault
                                          );
   
-  CGContextTranslateCTM(ctx, 0.0f, 320.0);
+  CGContextTranslateCTM(ctx, 0.0f, (float)h);
   CGContextScaleCTM(ctx, 1.0f, -1.0f);
   CGContextSetInterpolationQuality(ctx, kCGInterpolationNone);
-  CGContextDrawImage( ctx, CGRectMake(0, 0, 480.0, 320.0), renderImage );
+  CGContextDrawImage( ctx, CGRectMake(0, 0, (float)w, (float)h), renderImage );
   
   CGImageRelease(renderImage);
   /*
@@ -116,10 +195,38 @@ SDL_uikitview* sharedSDL_uikitview = nil;
   [[self layer] setMinificationFilter:kCAFilterNearest];
   [[self layer] setMagnificationFilter:kCAFilterNearest];
   [[self layer] setOpaque: YES];
-  [self setCenter:CGPointMake(frame.size.width/2.0, frame.size.height/2.0)];
-    
+  //[self setCenter:CGPointMake(frame.size.width/2.0, frame.size.height/2.0)];
+
+  //[self checkOrientation];
+  
 	return self;
 
+}
+
+- (void)checkOrientation
+{
+  UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
+  if(UIDeviceOrientationIsPortrait(deviceOrientation))
+  {
+    current_width = [UIScreen mainScreen].bounds.size.width;
+    current_height = [UIScreen mainScreen].bounds.size.height;
+  }
+  else if(UIDeviceOrientationIsLandscape(deviceOrientation))
+  {
+    current_width = [UIScreen mainScreen].bounds.size.height;
+    current_height = [UIScreen mainScreen].bounds.size.width;
+    
+    if(current_width > current_height)
+    {
+      CGAffineTransform transform = self.transform;
+      CGPoint center = CGPointMake(768.0 / 2.0, 1024.0 / 2.0);
+      self.center = center;
+      // Rotate the view around its new center point.
+      transform = CGAffineTransformRotate(transform, ((deviceOrientation == UIDeviceOrientationLandscapeLeft ? 1.0 : 3.0) * M_PI / 2.0));
+      self.transform = transform;
+      self.frame = CGRectMake(0.0, 0.0, 1024.0, 768.0);
+    }
+  }
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

@@ -56,15 +56,17 @@ static int SetupWindowData(_THIS, SDL_Window *window, UIWindow *uiwindow, SDL_bo
 	{
         window->x = 0;
         window->y = 0;
-        window->w = (int)uiwindow.frame.size.width;
-        window->h = (int)uiwindow.frame.size.height;
+        window->w = (int)[UIScreen mainScreen].bounds.size.width;
+        window->h = (int)[UIScreen mainScreen].bounds.size.height;
     }
 	
 	window->driverdata = data;
 	
-	window->flags &= ~SDL_WINDOW_RESIZABLE;		/* window is NEVER resizeable */
-	//window->flags |= SDL_WINDOW_OPENGL;			/* window is always OpenGL */
-	window->flags |= SDL_WINDOW_FULLSCREEN;		/* window is always fullscreen */
+	//window->flags &= ~SDL_WINDOW_RESIZABLE;		/* window is NEVER resizeable */
+	window->flags &= ~SDL_WINDOW_FULLSCREEN;
+  window->flags |= SDL_WINDOW_RESIZABLE;		/* window is always fullscreen */
+  //window->flags |= SDL_WINDOW_OPENGL;			/* window is always OpenGL */
+	//window->flags |= SDL_WINDOW_FULLSCREEN;		/* window is always fullscreen */
 	window->flags |= SDL_WINDOW_SHOWN;			/* only one window on iPod touch, always shown */
 	window->flags |= SDL_WINDOW_INPUT_FOCUS;	/* always has input focus */	
 
@@ -103,30 +105,40 @@ int UIKit_CreateWindow(_THIS, SDL_Window *window) {
 	//[SDLUIKitDelegate sharedAppDelegate].window = uiwindow;
 	[SDLUIKitDelegate sharedAppDelegate].windowID = window->id;
 	//[uiwindow release]; /* release the window (the app delegate has retained it) */
-	
+
+  SDL_uikitviewcontroller *viewcontroller;
 	SDL_uikitview *view;
   
 	/* construct our view, passing in SDL's OpenGL configuration data */
-	view = [[SDL_uikitview alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
+  viewcontroller = [[SDL_uikitviewcontroller alloc] initWithNibName:nil bundle:nil];
+	view = (SDL_uikitview*)viewcontroller.view;
 	
   SDL_WindowData *data = (SDL_WindowData *)window->driverdata;
+  data->viewcontroller = viewcontroller;
 	data->view = view;
 	data->uiwindow = [SDLUIKitDelegate sharedAppDelegate].window;
 	/* add the view to our window */
 	[[SDLUIKitDelegate sharedAppDelegate].window addSubview: view];
-	
+
+  //CGPoint center = CGPointMake([UIScreen mainScreen].bounds.size.width / 2.0, [UIScreen mainScreen].bounds.size.height / 2.0);
+  //view.bounds = CGRectMake(0.0, 0.0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+  //view.center = center;
+  
+  /*
   CGAffineTransform transform = view.transform;
-  CGPoint center = CGPointMake(320.0 / 2.0, 480.0 / 2.0);
-  view.bounds = CGRectMake(0.0, 0.0, 480.0, 320.0);
+  CGPoint center = CGPointMake(768.0 / 2.0, 1024.0 / 2.0);
+  view.bounds = CGRectMake(0.0, 0.0, 1024.0, 768.0);
   view.center = center;
   // Rotate the view 90 degrees around its new center point.
   transform = CGAffineTransformRotate(transform, (M_PI / 2.0));
   view.transform = transform;
+  */
   
   [data->uiwindow makeKeyAndVisible];
     
 	/* Don't worry, the window retained the view */
 	[view release];
+  
 	return 1;
 	
 }

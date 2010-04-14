@@ -1,3 +1,6 @@
 To build & install:
 Locate and using XCode, run ./projects/openttd/openttd.xcodeproj
 Using the 2.2.1 framework and a release build, select Build or if you would also like to install, select Build & Go. 
+
+Note:
+Depending on your XCode configuration, some project properties may have a hardcoded path beginning with /Users/me/dev/openttd/. If this is the case you may need to change that directory to your working path.

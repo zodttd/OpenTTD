@@ -412,6 +412,10 @@ extern VideoBootStrap PND_bootstrap;
 #define SDL_CurrentDisplay	(_this->displays[_this->current_display])
 #define SDL_CurrentRenderer	(SDL_CurrentDisplay.current_renderer)
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+  
 extern SDL_VideoDevice *SDL_GetVideoDevice();
 extern int SDL_AddBasicVideoDisplay(const SDL_DisplayMode * desktop_mode);
 extern int SDL_AddVideoDisplay(const SDL_VideoDisplay * display);
@@ -441,6 +445,10 @@ extern void SDL_OnWindowFocusGained(SDL_Window * window);
 extern void SDL_OnWindowFocusLost(SDL_Window * window);
 extern SDL_WindowID SDL_GetFocusWindow(void);
 
+#ifdef __cplusplus
+  }
+#endif
+    
 #endif /* _SDL_sysvideo_h */
 
 /* vi: set ts=4 sw=4 expandtab: */

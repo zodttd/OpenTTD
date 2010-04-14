@@ -1,0 +1,43 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Makefile to build the openttd debian package.
+
+# Use debhelper default for all targets (but some are overridden below).
+%:
+	dh $@
+
+DEB_HOST_GNU_TYPE=$(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE=$(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+ifneq ($(DEB_HOST_GNU_TYPE),$(DEB_BUILD_GNU_TYPE))
+CROSS= --build $(DEB_BUILD_GNU_TYPE) --host $(DEB_HOST_GNU_TYPE)
+endif
+
+# Pass custom options to configure. Since it's not autoconf but a custom
+# script, some of the option names are slightly different. We also need
+# to be explicit about the dependencies, in case we're not running in a
+# clean build root.
+override_dh_auto_configure:
+	./configure $(CROSS) --prefix-dir=/usr --install-dir=debian/openttd --without-allegro --with-zlib --with-lzo2 --with-sdl --with-png --with-freetype --with-fontconfig --with-icu
+
+# Do some extra installation
+override_dh_auto_install:
+	$(MAKE) install
+
+	# Install the wrapper and make it executable
+	install -d debian/openttd/usr/share/games/openttd/
+	install -m755 debian/openttd-wrapper debian/openttd/usr/share/games/openttd/
+
+	# Since 0.7.0, upstream Makefile installs some unwanted stuff.
+	-rm $(CURDIR)/debian/openttd/usr/share/doc/openttd/COPYING
+	-rm $(CURDIR)/debian/openttd/usr/share/doc/openttd/changelog.txt
+	-rm $(CURDIR)/debian/openttd/usr/share/doc/openttd/ob*_format.txt
+
+# Don't do testing. Because the OpenTTD Makefile always does dependency
+# generation (even on invalid targets), dh_auto_test thinks there is a
+# "test" target, while there isn't.
+override_dh_auto_test:
+
+# Call mrproper. Again, dh_auto_clean thinks there is a distclean
+# target, while there isn't.
+override_dh_auto_clean:
+	[ ! -f Makefile ] || $(MAKE) mrproper

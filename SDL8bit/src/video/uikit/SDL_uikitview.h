@@ -26,6 +26,11 @@
 #include "SDL_mouse_c.h"
 #include "SDL_events.h"
 
+@interface SDL_uikitviewcontroller : UIViewController 
+{
+}
+@end
+
 #if SDL_IPHONE_MULTIPLE_MICE
 #define MAX_SIMULTANEOUS_TOUCHES 5
 #else
@@ -50,7 +55,8 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
-
+- (void)checkOrientation;
+  
 #if SDL_IPHONE_KEYBOARD
 - (void)showKeyboard;
 - (void)hideKeyboard;

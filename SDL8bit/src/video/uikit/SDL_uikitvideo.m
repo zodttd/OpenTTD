@@ -60,23 +60,23 @@ static void UIKit_DeleteDevice(SDL_VideoDevice * device)
 static SDL_VideoDevice *
 UIKit_CreateDevice(int devindex)
 {
-    SDL_VideoDevice *device;
+  SDL_VideoDevice *device;
 
-    /* Initialize all variables that we clean on shutdown */
-    device = (SDL_VideoDevice *) SDL_calloc(1, sizeof(SDL_VideoDevice));
-    if (!device) {
-        SDL_OutOfMemory();
-        if (device) {
-            SDL_free(device);
-        }
-        return (0);
-    }
+  /* Initialize all variables that we clean on shutdown */
+  device = (SDL_VideoDevice *) SDL_calloc(1, sizeof(SDL_VideoDevice));
+  if (!device) {
+      SDL_OutOfMemory();
+      if (device) {
+          SDL_free(device);
+      }
+      return (0);
+  }
 
-    /* Set the function pointers */
-    device->VideoInit = UIKit_VideoInit;
-    device->VideoQuit = UIKit_VideoQuit;
-    device->SetDisplayMode = UIKit_SetDisplayMode;
-    device->PumpEvents = UIKit_PumpEvents;
+  /* Set the function pointers */
+  device->VideoInit = UIKit_VideoInit;
+  device->VideoQuit = UIKit_VideoQuit;
+  device->SetDisplayMode = UIKit_SetDisplayMode;
+  device->PumpEvents = UIKit_PumpEvents;
 	device->CreateWindow = UIKit_CreateWindow;
 	device->DestroyWindow = UIKit_DestroyWindow;
 	
@@ -108,20 +108,28 @@ UIKit_VideoInit(_THIS)
   SDL_DisplayMode mode;
   
   mode.format = SDL_PIXELFORMAT_ARGB8888;
-  mode.w = 480;
-  mode.h = 320;
+  mode.w = 768;
+  mode.h = 1024;
   mode.refresh_rate = 0;
   mode.driverdata = NULL;
   if (SDL_AddBasicVideoDisplay(&mode) < 0) {
     return -1;
   }
   SDL_AddRenderDriver(&_this->displays[0], &SDL_UIKIT_RenderDriver);
+
+  SDL_zero(mode);
+  mode.format = SDL_PIXELFORMAT_ARGB8888;
+  mode.w = 1024;
+  mode.h = 768;
+  mode.refresh_rate = 0;
+  mode.driverdata = NULL;
+  SDL_AddDisplayMode(&_this->displays[0], &mode);
   
   SDL_zero(mode);
   SDL_AddDisplayMode(&_this->displays[0], &mode);
 
-    /* We're done! */
-    return 0;
+  /* We're done! */
+  return 0;
 }
 
 static int
