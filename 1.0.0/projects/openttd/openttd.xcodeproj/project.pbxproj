@@ -14,7 +14,6 @@
 		8C4AE2D0116F0125004C332E /* sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C4AE2CC116F0125004C332E /* sprite.cpp */; };
 		8C4AE2D1116F0125004C332E /* tilearea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C4AE2CE116F0125004C332E /* tilearea.cpp */; };
 		8C4AE3BD116F0209004C332E /* ai in Resources */ = {isa = PBXBuildFile; fileRef = 8C4AE343116F0209004C332E /* ai */; };
-		8C4AE3BE116F0209004C332E /* data in Resources */ = {isa = PBXBuildFile; fileRef = 8C4AE36A116F0209004C332E /* data */; };
 		8C4AE3BF116F0209004C332E /* gm in Resources */ = {isa = PBXBuildFile; fileRef = 8C4AE37E116F0209004C332E /* gm */; };
 		8C4AE3C0116F0209004C332E /* lang in Resources */ = {isa = PBXBuildFile; fileRef = 8C4AE382116F0209004C332E /* lang */; };
 		8C4AE3C1116F0209004C332E /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 8C4AE3B2116F0209004C332E /* scripts */; };
@@ -23,6 +22,9 @@
 		8C4AE7A411732545004C332E /* Default-LandscapeRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4AE7A011732545004C332E /* Default-LandscapeRight.png */; };
 		8C4AE7A511732545004C332E /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4AE7A111732545004C332E /* Default-Portrait.png */; };
 		8C4AE7A611732545004C332E /* Default-PortraitUpsideDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C4AE7A211732545004C332E /* Default-PortraitUpsideDown.png */; };
+		8C4AECDB1178471C004C332E /* data in Resources */ = {isa = PBXBuildFile; fileRef = 8C4AECDA1178471C004C332E /* data */; };
+		8C4AED5C11784B43004C332E /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 8C4AED5A11784B43004C332E /* COPYING */; };
+		8C4AED5D11784B43004C332E /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C4AED5B11784B43004C332E /* readme.txt */; };
 		8C6A800B10EAE4630036B749 /* md5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A7C1C10EAE4620036B749 /* md5.cpp */; };
 		8C6A803110EAE4630036B749 /* sqstdaux.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A7C5710EAE4620036B749 /* sqstdaux.cpp */; };
 		8C6A803210EAE4630036B749 /* sqstdblob.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A7C5810EAE4620036B749 /* sqstdblob.cpp */; };
@@ -458,7 +460,6 @@
 		8C4AE2CD116F0125004C332E /* sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sprite.h; sourceTree = "<group>"; };
 		8C4AE2CE116F0125004C332E /* tilearea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tilearea.cpp; sourceTree = "<group>"; };
 		8C4AE343116F0209004C332E /* ai */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ai; path = res/ai; sourceTree = "<group>"; };
-		8C4AE36A116F0209004C332E /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = res/data; sourceTree = "<group>"; };
 		8C4AE37E116F0209004C332E /* gm */ = {isa = PBXFileReference; lastKnownFileType = folder; name = gm; path = res/gm; sourceTree = "<group>"; };
 		8C4AE382116F0209004C332E /* lang */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lang; path = res/lang; sourceTree = "<group>"; };
 		8C4AE3B2116F0209004C332E /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = scripts; path = res/scripts; sourceTree = "<group>"; };
@@ -468,6 +469,9 @@
 		8C4AE7A011732545004C332E /* Default-LandscapeRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-LandscapeRight.png"; sourceTree = "<group>"; };
 		8C4AE7A111732545004C332E /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
 		8C4AE7A211732545004C332E /* Default-PortraitUpsideDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-PortraitUpsideDown.png"; sourceTree = "<group>"; };
+		8C4AECDA1178471C004C332E /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = res/data; sourceTree = "<group>"; };
+		8C4AED5A11784B43004C332E /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = COPYING; path = ../../COPYING; sourceTree = SOURCE_ROOT; };
+		8C4AED5B11784B43004C332E /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme.txt; path = ../../readme.txt; sourceTree = SOURCE_ROOT; };
 		8C6A7C1C10EAE4620036B749 /* md5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = md5.cpp; sourceTree = "<group>"; };
 		8C6A7C1D10EAE4620036B749 /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
 		8C6A7C3510EAE4620036B749 /* sqstdaux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqstdaux.h; sourceTree = "<group>"; };
@@ -1745,8 +1749,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8C4AED5A11784B43004C332E /* COPYING */,
+				8C4AED5B11784B43004C332E /* readme.txt */,
 				8C4AE343116F0209004C332E /* ai */,
-				8C4AE36A116F0209004C332E /* data */,
+				8C4AECDA1178471C004C332E /* data */,
 				8C4AE37E116F0209004C332E /* gm */,
 				8C4AE382116F0209004C332E /* lang */,
 				8C4AE3B2116F0209004C332E /* scripts */,
@@ -3528,7 +3534,6 @@
 				8CAAC18C1106FA0C00FED8E7 /* Splash.png in Resources */,
 				8CAAC1B81106FA2D00FED8E7 /* MainWindow.xib in Resources */,
 				8C4AE3BD116F0209004C332E /* ai in Resources */,
-				8C4AE3BE116F0209004C332E /* data in Resources */,
 				8C4AE3BF116F0209004C332E /* gm in Resources */,
 				8C4AE3C0116F0209004C332E /* lang in Resources */,
 				8C4AE3C1116F0209004C332E /* scripts in Resources */,
@@ -3536,6 +3541,9 @@
 				8C4AE7A411732545004C332E /* Default-LandscapeRight.png in Resources */,
 				8C4AE7A511732545004C332E /* Default-Portrait.png in Resources */,
 				8C4AE7A611732545004C332E /* Default-PortraitUpsideDown.png in Resources */,
+				8C4AECDB1178471C004C332E /* data in Resources */,
+				8C4AED5C11784B43004C332E /* COPYING in Resources */,
+				8C4AED5D11784B43004C332E /* readme.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3968,8 +3976,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: zod Stark";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: zod Stark";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -4007,8 +4015,8 @@
 					"-DENABLE_AI",
 				);
 				PRODUCT_NAME = OpenTTDiPad;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "C871B27B-830C-4460-85CD-36AD1B996CBB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C871B27B-830C-4460-85CD-36AD1B996CBB";
 				SDKROOT = iphoneos3.2;
 				TARGETED_DEVICE_FAMILY = 2;
 			};

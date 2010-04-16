@@ -1,0 +1,46 @@
+[metadata]
+name        = OpenSFX
+shortname   = OSFX
+version     = 87
+palette     = Windows
+description       = OpenSFX sound replacement set for OpenTTD. Freely available under the terms of the Creative Commons Sampling Plus 1.0 License. Contains samples from "freesound.org" and "pdsound.org". For full credits see "readme.txt". [OpenSFX 0.2.3]
+description.af_ZA = OpenSFX klank vervanging stel vir OpenTTD. Vrylik beskikbaar onder die terms van die Creative Commons Sampling Plus 1.0 License. Bevat klanke van af "freesound.org" en "pdsound.org". Vir voledige erkennings kyk na "readme.txt". [OpenSFX 0.2.3]
+description.ar_EG = OpenSFX مجموعة صوت بديلة لـ OpenTTD. متاحة مجانا تحت نظام نماذج الابداع العام بلس 1.0. يحتوي على نماذج من "freesound.org" و "pdsound.org". لتفاصيل الكاملة اقرا"readme.txt". [OpenSFX 0.2.3]
+description.bg_BG = OpenSFX звуков пакет за OpenTTD. Свободен за разпространение по условията на Creative Commons Sampling Plus 1.0 Лиценз. Съдържа мостри от "freesound.org" и "pdsound.org". За повече информация виж "readme.txt". [OpenSFX 0.2.3]
+description.ca_ES = Joc substitut de sons OpenSFX per a OpenTTD. Disponible lliurement sota els termes de la llicència Creative Commons Sampling Plus 1.0. Conté mostres de "freesound.org" i "pdsound.org". Per veure els crèdits sencers veure "readme.txt". [OpenSFX 0.2.3]
+description.cs_CZ = Nahrazující sada zvuků OpenSFX pro OpenTTD. Volně dostupné pod licencí Creative Commons Sampling Plus 1.0. Obsahuje zvukové vzorky z "freesound.org" a "pdsound.org". Bližší informace naleznete v souboru "readme.txt". [OpenSFX 0.2.3]
+description.da_DA = OpenSFX-lyderstatningssæt til OpenTTD. Frit tilgængeligt under termerne for Creative Commons Sampling Plus 1.0-licensen. Indeholder samples fra "freesound.org" og "pdsound.org". For Contains samples from "freesound.org" and "pdsound.org". For den fuldstændige kreditering, se "readme.txt". [OpenSFX 0.2.3]
+description.de_DE = OpenSFX Basissounds für OpenTTD. Frei verfügbar unter der Creative Commons Sampling Plus 1.0 - Lizenz. Es enthält Samples von "freesound.org" und "pdsound.org". Vollständige Referenzen sind in "readme.txt" zu finden. [OpenSFX 0.2.3]
+description.el_GR = Σετ αντικατάστασης ήχων OpenSFX για το OpenTTD. Ελεύθερα διαθέσιμο κάτω απο τους όρους χρήσης του Creative Commons Sampling Plus 1.0. Περιέχει δείγματα από το "freesound.org" και "pdsound.org". Για πληρη αναφορά συντελεστών δείτε το "readme.txt". [OpenSFX 0.2.3]
+description.en_GB = OpenSFX sound replacement set for OpenTTD. Freely available under the terms of the Creative Commons Sampling Plus 1.0 License. Contains samples from "freesound.org" and "pdsound.org". For full credits see "readme.txt". [OpenSFX 0.2.3]
+description.en_US = OpenSFX sound replacement set for OpenTTD. Freely available under the terms of the Creative Commons Sampling Plus 1.0 License. Contains samples from "freesound.org" and "pdsound.org". For full credits see "readme.txt". [OpenSFX 0.2.3]
+description.es_ES = OpenSFX es un conjunto de sonidos base para OpenTTD. Está disponible de forma libre bajo los términos de la licencia Creative Commons Sampling Plus 1.0. Contiene muestras de "freesound.org" y "pdsound.org". Para ver los créditos completos consultar "readme.txt". [OpenSFX 0.2.3]
+description.et_ET = OpenSFX helid OpenTTD jaoks. Vabalt saadaval Creative Commons Sampling Plus 1.0 litsentsi alusel. Sisaldab "freesound.org" ja "pdsound.org" helikatkeid. Täpsemalt vaata failist "readme.txt". [OpenSFX 0.2.3]
+description.fi_FI = OpenSFX-äänet OpenTTD:lle. Vapaasti saatavilla Creative Commons Sampling Plus 1.0-lisenssillä. Sisältää ääniä lähteistä "freesound.org" ja "pdsound.org". Kaikki tekijät tiedostossa "readme.txt". [OpenSFX 0.2.3]
+description.fr_FR = Sons de remplacement OpenSFX pour OpenTTD. Disponible librement selon les termes de la licence Creative Commons Sampling Plus 1.0 Licence. Contient des échantillons provenant de "freesound.org" et "pdsound.org". Pour les crédits complets voir "readme.txt". [OpenSFX 0.2.3]
+description.hr_HR = OpenSFX zamjenski zvučni paket za OpenTTD. Dostupan besplatno pod uvjetima Creative Commons Sampling Plus 1.0 licence. Sadrži uzorke iz "freesound.org" i "pdsound.org". Za sve zasluge vidi "readme.txt". [OpenSFX 0.2.3]
+description.hu_HU = OpenSFX hang alapcsomag az OpenTTD-hez. Ingyenesen hozzáférhető a Creative Commons Sampling Plus 1.0 License feltételeivel. Hangmintákat tartalmaz a "freesound.org" és a "pdsound.org" oldalakról. A teljes listához lásd a "readme.txt" fájlt. [OpenSFX 0.2.3]
+description.id_ID = Setelan dasar efek suara OpenSFX untuk OpenTTD. Tersedia secara bebas di bawah lisensi Creative Commons Sampling Plus 1.0. Sebagian diambil dari "freesound.org" dan "pdsound.org". Untuk selengkapnya lihat "readme.txt". [OpenSFX 0.2.3]
+description.it_IT = Pacchetto sonoro sostitutivo OpenSFX per OpenTTD. Liberamente disponibile secondo i termini della licenza Creative Commons Sampling Plus 1.0. Contiene campioni audio ottenuti da "freesound.org" e "pdsound.org". Per l'elenco completo dei riconoscimenti, si veda "readme.txt". [OpenSFX 0.2.3]
+description.nb_NO = OpenSFX erstatter alle lydene i OpenTTD. Fritt tilgjengelig under betingelsene i Creative Commons Sampling Plus 1.0 License. Inneholder samplinger fra "freesound.org" og "pdsound.org". For fulle credits se "readme.txt". [OpenSFX 0.2.3]
+description.nl_NL = OpenSFX vervangingsset voor geluiden voor OpenTTD. Beschikbaar onder de voorwaarden van de Creative Commons Sampling Plus 1.0 License. Bevat samples van "freesound.org" en "pdsound.org". Voor de volledige verantwoording, zie "readme.txt". [OpenSFX 0.2.3]
+description.nn_NO = OpenSFX erstattar alle lydane i OpenTTD. Fritt tilgjengeleg under vilkåra i Creative Commons Sampling Plus 1.0 License. Inneheld samplingar frå "freesound.org" og "pdsound.org". For fulle akkrediteringar sjå "readme.txt". [OpenSFX 0.2.3]
+description.pl_PL = OpenSFX to zestaw zastępujący dźwięki dla OpenTTD. Dostępny na warunkach licencji Creative Commons Sampling Plus 1.0. Zawiera próbki dźwięków z "freesound.org" oraz "pdsound.org". Lista wszystkich autorów znajduje się w pliku "readme.txt". [OpenSFX 0.2.3]
+description.pt_PT = Conjunto de substituição de sons OpenSFX para OpenTTD. Livremente disponível dentro dos termos da Creative Commons Sampling Plus 1.0 License. Contém sons de "freesound.org" e "pdsound.org". Para créditos completos veja "readme.txt". [OpenSFX 0.2.3]
+description.ro_RO = Setul de sunete OpenSFX pentru OpenTTD. Disponibil gratuit sub termenii licenţei Creative Commons Sampling Plus 1.0. Include conţinut de la "freesound.org" şi "pdsound.org". Pentru o lista completă de credite, citiţi fişierul "readme.txt". [OpenSFX 0.2.3]
+description.ru_RU = OpenSFX представляет собой набор звукового оформления для OpenTTD. Свободно распространяется в соответствии с лицензией Creative Commons Sampling Plus 1.0 License. В наборе используются материалы сайтов "freesound.org" и "pdsound.org". Более подробную информацию о создателях набора можно узнать в документе "readme.txt". [OpenSFX 0.2.3]
+description.sk_SK = OpenSFX, náhradná zvuková sada pre OpenTTD. Voľne dostupná pod licenciou Creative Commons Sampling Plus 1.0. Obsahuje materiál z "freesound.org" a "pdsound.org". Viac informácií nájdete v súbore "readme.txt". [OpenSFX 0.2.3]
+description.sl_SL = Projekt zamenjave zvokov OpenSFX za OpenTTD. Na voljo zastonj pod pogoji licence Creative Commons Sampling Plus 1.0 License. Vsebuje primere iz "freesound.org" in "pdsound.org". Za vse zahvale poglejte datoteko "readme.txt". [OpenSFX 0.2.3]
+description.sr_RS = OpenSFX skup zvukova za OpenTTD. Slobodno dostupan pod uslovima Creative Commons Sampling Plus 1.0 licence. Sadrži uzorke sa "freesound.org" i "pdsound.org". Detaljne zasluge pogledajte u "readme.txt". [OpenSFX 0.2.3]
+description.sv_SE = Ljudpaketet OpenSFX för OpenTTD. Fritt tillgängligt under villkoren för Creative Commons Sampling Plus 1.0-licensen. Innehåller ljudsnuttar (sampels) från "freesound.org" och "pdsound.org". För samtliga medverkande se "readme.txt". [OpenSFX 0.2.3]
+description.tr_TR = OpenTTD için OpenSFX ses değişim kümesi. Creative Commons Sampling Plus 1.0 Lisansı ile serbestçe edinilebilir. "freesound.org" ve "pdsound.org" sitelerinden alınmış örnekler içerir. Hazırlayanların tam listesi için "readme.txt" dosyasına bakın. [OpenSFX 0.2.3]
+description.zh_TW = 供 OpenTTD 使用的 OpenSFX 音效替代計畫的音效集。在 Creative Commons Sampling Plus 1.0 License. 內含來自 "freesound.org" 及 "pdsound.org" 的音效樣本。完整感謝清單請見 "readme.txt"。 [OpenSFX 0.2.3]
+
+[files]
+samples  = opensfx.cat
+
+[md5s]
+opensfx.cat        = 26112868724b39d38314aa56f0ed8ca6
+
+[origin]
+default = Please redownload from BaNaNaS.

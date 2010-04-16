@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>8C4AE7F511740014004C332E</string>
+						<string>8C4AED6811784B63004C332E</string>
 						<key>history</key>
 						<array>
 							<string>8C4AE4D3116FF279004C332E</string>
@@ -235,7 +235,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>15 130 907 1048 0 0 1920 1178 </string>
+				<string>1468 49 907 1048 1920 0 1920 1200 </string>
 			</dict>
 		</dict>
 	</array>
@@ -270,6 +270,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -321,25 +323,30 @@
 								<string>8C6A7FDE10EAE4630036B749</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
+								<string>8C4AE343116F0209004C332E</string>
+								<string>8C4AECDA1178471C004C332E</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1D30AB110D05D00D00671497</string>
 								<string>288765FC0DF74451002DB57D</string>
 								<string>8C6A821110EAE4E40036B749</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
+								<string>8C4AED0411784ACC004C332E</string>
+								<string>8C4AED0511784ACC004C332E</string>
+								<string>8C4AE343116F0209004C332E</string>
+								<string>8C4AECDA1178471C004C332E</string>
 								<string>1C37FABC05509CD000000102</string>
 								<string>1CC0EA4004350EF90041110B</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>600</integer>
-									<integer>599</integer>
+									<integer>570</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 9446}, {235, 990}}</string>
+							<string>{{0, 10879}, {235, 990}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -369,14 +376,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SDL_video.c</string>
+								<string>compat_0.7.nut</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -384,11 +389,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SDL_video.c</string>
+										<string>compat_0.7.nut</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>8C4AE7F411740014004C332E</string>
+										<string>8C4AED6611784B63004C332E</string>
 										<key>history</key>
 										<array>
 											<string>8C6A838C10EAE9CF0036B749</string>
@@ -481,7 +486,9 @@
 											<string>8C4AE7D711733030004C332E</string>
 											<string>8C4AE7D811733030004C332E</string>
 											<string>8C4AE7D911733030004C332E</string>
-											<string>8C4AE7DA11733030004C332E</string>
+											<string>8C4AED0611784ACC004C332E</string>
+											<string>8C4AED6411784B63004C332E</string>
+											<string>8C4AED6511784B63004C332E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -679,13 +686,14 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>8C4AED0C11784ACC004C332E</string>
 		<string>8C4AE6201172C797004C332E</string>
 		<string>8C4AE6211172C797004C332E</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>8C4AE488116F0BB4004C332E</string>
 		<string>8C6A7AA910E9C6550036B749</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>8C4AE488116F0BB4004C332E</string>
 		<string>/Users/me/dev/openttd/1.0.0/projects/openttd/openttd.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

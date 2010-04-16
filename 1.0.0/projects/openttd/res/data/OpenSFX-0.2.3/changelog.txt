@@ -1,0 +1,35 @@
+0.2.3 (2010-03-31)
+------------------------------------------------------------------------
+-Fix: Do not rebuild the md5sums file which one wants to check against
+
+
+0.2.2 (2010-03-24)
+------------------------------------------------------------------------
+-Add: Translations of the description of this set to about 30 languages
+-Change: Improvements to the build system
+
+
+0.2.1 (2009-12-23)
+------------------------------------------------------------------------
+-Change: Improve sample for the level crossing
+-Change: Improvements to the build system
+
+
+0.2.0 (2009-12-09)
+------------------------------------------------------------------------
+-Add: Missing toyland samples, resulting in 73 completed sounds
+
+
+0.1.0 (2009-11-14)
+------------------------------------------------------------------------
+-Add: several sounds, resulting in 59 completed sounds
+
+
+0.1.0-alpha2 (2009-08-14)
+------------------------------------------------------------------------
+-Add: several sounds, resulting in 50 completed sounds
+
+
+0.1.0-alpha1 (2009-08-11)
+------------------------------------------------------------------------
+-Add: initial 31 completed sounds
