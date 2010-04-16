@@ -1,0 +1,118 @@
+
+Detecing awk...
+Trying: echo "a.c b.c c.c" | tr ' ' \n |  awk ' { ORS = " " } /\.c$/   { gsub(".c$",   ".o", $0); print $0; }' 2>/dev/null
+Result: 'a.o b.o c.o '
+checking awk... awk
+detecting OS... OSX
+checking build system type... CC/CXX not set (skipping)
+executing gcc -dumpmachine
+  returned i686-apple-darwin10
+  exit code 0
+checking build system type... i686-apple-darwin10
+checking host system type... CC/CXX not set (skipping)
+executing gcc -dumpmachine
+  returned i686-apple-darwin10
+  exit code 0
+checking host system type... i686-apple-darwin10
+checking universal build... no
+checking build cc... gcc
+checking host cc... gcc
+checking build c++... CC/CXX not set (skipping)
+executing g++ -dumpmachine
+  returned i686-apple-darwin10
+  exit code 0
+checking build c++... g++
+checking host c++... CC/CXX not set (skipping)
+executing g++ -dumpmachine
+  returned i686-apple-darwin10
+  exit code 0
+checking host c++... g++
+checking host strip... CC/CXX not set (skipping)
+executing strip strip.test
+  returned 
+  exit code 0
+checking host strip... strip
+checking builtin depend... yes
+checking makedepend... disabled
+executing g++  tmp.64bit.cpp -o tmp.64bit -DTESTING 2>&1
+  returned 
+  exit code 0
+detecting cpu-type... 64 bits
+checking static... no
+checking unicode... no
+using debug level... no
+using desync debug level... no
+using link time optimization... no
+checking OSX sysroot... no (use system default)
+checking Allegro... OSX, skipping
+checking SDL... OSX, skipping
+checking COCOA... found
+checking whether to enable the Quartz window subdriver... yes
+checking Quickdraw window subdriver... disabled (64 bits)
+checking GDI video driver... not Windows, skipping
+checking dedicated... not selected
+checking network... found
+checking ai... found
+checking translator... no
+checking assert... disabled
+detecting zlib
+  trying /usr/include/zlib.h... found
+checking zlib... found
+checking lzo2... disabled
+WARNING: liblzo2 was not detected or disabled
+WARNING: OpenTTD doesn't require liblzo2, but it does mean that
+WARNING: loading old savegames/scenarios will be disabled.
+WARNING: We strongly suggest you to install liblzo2.
+executing libpng-config --version
+  returned 1.2.41
+  exit code 0
+checking libpng... found
+executing freetype_config --version
+  returned 9.20.3
+  exit code 0
+checking libfreetype... found
+checking libfontconfig... OSX, skipping
+executing icu-config --version
+  returned 
+  exit code 127
+checking libicu... not found
+checking psp-config... not PSP, skipping
+detecting libtimidity
+  trying /usr/include/timidity.h... no
+  trying /usr/local/include/timidity.h... no
+checking libtimidity... not found
+checking direct-music... not Windows, skipping
+running echo <array> | sort
+  result was valid
+checking sort... sort
+checking endianess... PREPROCESSOR
+suppress language errors... no
+checking stripping... strip 
+checking distcc... no (only used when forced)
+checking ccache... no (only used when forced)
+detecting G5... no
+checking revision... release (1.0.0)
+found iconv in iconv.h
+checking iconv... found
+executing g++   -c tmp.iconv.cpp -o tmp.iconv -DTESTING 2>&1
+  exit code 1
+checking if iconv has non-const inbuf... yes
+executing g++    tmp.iconv.cpp -o tmp.iconv -DTESTING 2>&1
+  exit code 1
+checking whether to link to iconv... yes
+personal home directory... Documents/OpenTTD
+shared data directory... /Library/Application\ Support/OpenTTD
+installation directory... /
+icon theme directory... none
+manual page directory... share/man/man6
+menu item directory... none
+Running configure with following options:
+
+./configure --ignore-extra-parameters --build="" --host="" --cc-build="gcc" --cc-host="gcc" --cxx-build="g++" --cxx-host="g++" --windres="" --strip="strip" --lipo="" --awk="awk" --os="OSX" --endian="PREPROCESSOR" --cpu-type="64" --revision="1.0.0" --config-log="config.log" --prefix-dir="/usr/local" --binary-dir="games" --data-dir="share/games/openttd" --doc-dir="share/games/openttd/docs" --icon-dir="share/pixmaps" --icon-theme-dir="" --man-dir="share/man/man6" --menu-dir="" --personal-dir="Documents/OpenTTD" --shared-dir="/Library/Application\ Support/OpenTTD" --install-dir="/" --menu-group="Game;" --menu-name="OpenTTD" --binary-name="openttd" --enable-debug="0" --enable-desync-debug="0" --enable-profiling="0" --enable-lto="0" --enable-dedicated="0" --enable-network="1" --enable-ai="1" --enable-static="0" --enable-translator="0" --enable-unicode="0" --enable-assert="0" --enable-strip="1" --enable-universal="0" --enable-osx-g5="0" --enable-cocoa-quartz="1" --enable-cocoa-quickdraw="0" --with-osx-sysroot="1" --with-application-bundle="1" --with-allegro="1" --with-sdl="1" --with-cocoa="1" --with-zlib="1" --with-lzo2="0" --with-png="1" --enable-builtin-depend="1" --with-makedepend="0" --with-direct-music="0" --with-sort="1" --with-iconv="2" --with-midi="" --with-midi-arg="" --with-libtimidity="0" --with-freetype="1" --with-fontconfig="1" --with-icu="1" --static-icu="0" --with-psp-config="1" --with-threads="1" --with-distcc="0" --with-ccache="0" --CC="" --CXX="" --CFLAGS="" --CXXFLAGS="" --LDFLAGS=""
+
+using CFLAGS...  -O3 -funroll-loops -fsched-interblock -falign-loops=16 -falign-jumps=16 -falign-functions=16 -falign-jumps-max-skip=15 -falign-loops-max-skip=15 -mdynamic-no-pic  -Wall -Wno-multichar -Wsign-compare -Wundef -Wwrite-strings -Wpointer-arith -W -Wno-unused-parameter -Wformat=2 -Wredundant-decls -Wno-unused-variable -fno-strict-aliasing -Wcast-qual -fno-strict-overflow -DOSX -DNO_QUICKTIME -mmacosx-version-min=10.5 -DUNIX -DWITH_COCOA -DENABLE_COCOA_QUARTZ -DWITH_ZLIB -D_SQ64 -I/Users/me/dev/openttd/1.0.0/src/3rdparty/squirrel/include -DENABLE_AI -DWITH_PNG  -I/usr/X11/include/libpng12  -DWITH_FREETYPE -I/usr/X11/include/freetype2 -I/usr/X11/include  -DWITH_ICONV -DHAVE_BROKEN_ICONV -DENABLE_NETWORK -DNDEBUG -DWITH_PERSONAL_DIR -DPERSONAL_DIR=\"Documents/OpenTTD\" -DWITH_SHARED_DIR -DSHARED_DIR=\"/Library/Application\ Support/OpenTTD\" -DGLOBAL_DATA_DIR=\"/usr/local/share/games/openttd\"
+using CXXFLAGS... 
+using LDFLAGS... -lstdc++ -lc -F/System/Library/Frameworks -framework Cocoa -framework Carbon -framework AudioUnit -framework AudioToolbox -lz -L/usr/X11/lib -lpng12  -L/usr/X11/lib -lfreetype -lz -Wl,-framework,CoreServices -Wl,-framework,ApplicationServices  -liconv   -fno-strict-aliasing -fno-strict-overflow -framework Cocoa
+Generating Makefile...
+Generating lang/Makefile...
+Generating objs/Makefile...
